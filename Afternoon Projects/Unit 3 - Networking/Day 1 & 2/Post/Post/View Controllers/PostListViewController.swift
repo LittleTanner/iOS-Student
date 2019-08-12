@@ -17,6 +17,7 @@ class PostListViewController: UIViewController {
     // MARK: - Properties
     var postController = PostController()
 
+    var refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +30,20 @@ class PostListViewController: UIViewController {
         tableViewOutlet.estimatedRowHeight = 45
         tableViewOutlet.rowHeight = UITableView.automaticDimension
         
-        
+        tableViewOutlet.refreshControl = refreshControl
 
-    
     }
 
+    // MARK: - Custom Methods
+    @objc func refreshControlPulled() {
+        refreshControl.addTarget(self, action: #selector(refreshControlPulled), for: .valueChanged)
+        
+        postController.fetchPosts {
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+            }
+        }
+    }
 
     
     /*
