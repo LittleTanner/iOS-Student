@@ -24,9 +24,13 @@ class PostListViewController: UIViewController {
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         
-        postController.fetchPosts {
-            <#code#>
-        }
+        postController.fetchPosts {}
+        
+        tableViewOutlet.estimatedRowHeight = 45
+        tableViewOutlet.rowHeight = UITableView.automaticDimension
+        
+        
+
     
     }
 
