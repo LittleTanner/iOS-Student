@@ -25,7 +25,9 @@ class PostListViewController: UIViewController {
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         
-        postController.fetchPosts {}
+        postController.fetchPosts {
+            self.reloadTableView()
+        }
         
         tableViewOutlet.estimatedRowHeight = 45
         tableViewOutlet.rowHeight = UITableView.automaticDimension
@@ -41,7 +43,14 @@ class PostListViewController: UIViewController {
         postController.fetchPosts {
             DispatchQueue.main.async {
                 self.refreshControl.endRefreshing()
+                self.reloadTableView()
             }
+        }
+    }
+    
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableViewOutlet.reloadData()
         }
     }
 
