@@ -33,6 +33,7 @@ class PostListViewController: UIViewController {
         tableViewOutlet.rowHeight = UITableView.automaticDimension
         
         tableViewOutlet.refreshControl = refreshControl
+        
 
     }
 
@@ -42,14 +43,16 @@ class PostListViewController: UIViewController {
         
         postController.fetchPosts {
             DispatchQueue.main.async {
-                self.refreshControl.endRefreshing()
                 self.reloadTableView()
+                self.refreshControl.endRefreshing()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }
     }
     
     func reloadTableView() {
         DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
             self.tableViewOutlet.reloadData()
         }
     }
