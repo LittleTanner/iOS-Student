@@ -10,11 +10,9 @@ import Foundation
 
 class PostController {
     
-    
-    
     let baseURL = URL(string: "https://devmtn-posts.firebaseio.com/posts")
     
-    let posts: [Post] = []
+    var posts: [Post] = []
     
     func fetchPosts(completion: @escaping () -> Void) {
         
@@ -42,20 +40,15 @@ class PostController {
                 let postsDictionary = try jsonDecoder.decode([String:Post].self, from: data)
                 var posts = postsDictionary.compactMap({ $0.value })
                 posts.sort(by: {$0.timestamp > $1.timestamp})
-                posts = self.posts
+                self.posts = posts
                 completion()
             } catch {
                 print("Error decoding data: \(error) \(error.localizedDescription)")
                 completion()
                 return
             }
-            
-            
-            
-            
         }
         dataTask.resume()
-        
     }
     
 } // End of class
