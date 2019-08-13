@@ -57,7 +57,7 @@ class PostController {
 //                    self.posts.replaceSubrange(1...15, with: self.posts)
                        self.posts = posts
                 } else {
-                    self.posts.append(contentsOf: self.posts)
+                    self.posts.append(contentsOf: posts)
                 }
                 completion()
             } catch {
