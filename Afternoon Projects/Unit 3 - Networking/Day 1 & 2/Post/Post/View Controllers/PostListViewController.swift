@@ -45,14 +45,14 @@ class PostListViewController: UIViewController {
             DispatchQueue.main.async {
                 self.reloadTableView()
                 self.refreshControl.endRefreshing()
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
             }
         }
     }
     
     func reloadTableView() {
         DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.tableViewOutlet.reloadData()
         }
     }
