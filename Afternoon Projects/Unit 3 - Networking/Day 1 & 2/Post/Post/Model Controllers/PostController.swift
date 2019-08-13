@@ -14,11 +14,24 @@ class PostController {
     
     var posts: [Post] = []
     
-    func fetchPosts(completion: @escaping () -> Void) {
+    func fetchPosts(reset: Bool = true, completion: @escaping () -> Void) {
+        
+        let queryEndInterval = reset ? Date().timeIntervalSince1970 : posts.last?.timestamp ?? Date().timeIntervalSince1970
         
         guard let baseURL = baseURL else { return }
         
-        let getterEndpoint = baseURL.appendingPathExtension("json")
+        let urlParameters = [ "orderBy": "\"timestamp\"", "endAt": "\(queryEndInterval)","limitToLast":"15",]
+        
+        let queryItems = urlParameters.compactMap( { URLQueryItem(name: $0.key, value: $0.value)})
+        
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        
+        urlComponents?.queryItems = queryItems
+        
+        guard let url = urlComponents?.url else { return }
+        
+        let getterEndpoint = url.appendingPathExtension("json")
+        
         
         var request = URLRequest(url: getterEndpoint)
         request.httpBody = nil
@@ -40,7 +53,12 @@ class PostController {
                 let postsDictionary = try jsonDecoder.decode([String:Post].self, from: data)
                 var posts = postsDictionary.compactMap({ $0.value })
                 posts.sort(by: {$0.timestamp > $1.timestamp})
-                self.posts = posts
+                if reset == true {
+//                    self.posts.replaceSubrange(1...15, with: self.posts)
+                       self.posts = posts
+                } else {
+                    self.posts.append(contentsOf: self.posts)
+                }
                 completion()
             } catch {
                 print("Error decoding data: \(error) \(error.localizedDescription)")
