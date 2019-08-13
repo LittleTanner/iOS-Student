@@ -14,9 +14,11 @@ class PostController {
     
     var posts: [Post] = []
     
+
+    
     func fetchPosts(reset: Bool = true, completion: @escaping () -> Void) {
         
-        let queryEndInterval = reset ? Date().timeIntervalSince1970 : posts.last?.timestamp ?? Date().timeIntervalSince1970
+        let queryEndInterval = reset ? Date().timeIntervalSince1970 : posts.last?.queryTimestamp ?? Date().timeIntervalSince1970
         
         guard let baseURL = baseURL else { return }
         
