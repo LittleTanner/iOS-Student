@@ -1,5 +1,5 @@
 //
-//  StateListTableViewController.swift
+//  StateDetailTableViewController.swift
 //  Representative
 //
 //  Created by Kevin Tanner on 8/14/19.
@@ -8,10 +8,31 @@
 
 import UIKit
 
-class StateListTableViewController: UITableViewController {
+class StateDetailTableViewController: UITableViewController {
 
+    // MARK: - Properties
+    var representative: [Representative] = [] {
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    
+    var state: String?
+    
+
+    // MARK: - Lifecycle
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let state = state else { return }
+        RepresentativeController.searchRepresentatives(forState: state) { (representative) in
+            
+            DispatchQueue.main.async {
+                self.representative = representative
+            }
+        }
 
     }
 
@@ -19,16 +40,21 @@ class StateListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return States.all.count
+        return representative.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "stateCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "stateDetailCell", for: indexPath) as? StateDetailTableViewCell else { return UITableViewCell()}
 
-        let state = States.all[indexPath.row]
+        let state = representative[indexPath.row]
         
-        cell.textLabel?.text = state
+        cell.nameLabel.text = state.name
+        cell.districtLabel.text = state.district
+        cell.partyLabel.text = state.party
+        cell.phoneNumberLabel.text = state.phone
+        cell.websiteLabel.text = state.link
+        
 
         return cell
     }
@@ -69,7 +95,7 @@ class StateListTableViewController: UITableViewController {
     }
     */
 
-
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -77,6 +103,6 @@ class StateListTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-
+    */
 
 }

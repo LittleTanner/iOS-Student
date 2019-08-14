@@ -15,6 +15,8 @@
 		FCC6787B230484CC003E1A60 /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6787A230484CC003E1A60 /* Representative.swift */; };
 		FCC6787D23048794003E1A60 /* RepresentativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6787C23048794003E1A60 /* RepresentativeController.swift */; };
 		FCC6787F2304AE08003E1A60 /* StateListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6787E2304AE08003E1A60 /* StateListTableViewController.swift */; };
+		FCC678812304B05C003E1A60 /* StateDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC678802304B05C003E1A60 /* StateDetailTableViewController.swift */; };
+		FCC678832304B2DB003E1A60 /* StateDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC678822304B2DB003E1A60 /* StateDetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FCC6787A230484CC003E1A60 /* Representative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representative.swift; sourceTree = "<group>"; };
 		FCC6787C23048794003E1A60 /* RepresentativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeController.swift; sourceTree = "<group>"; };
 		FCC6787E2304AE08003E1A60 /* StateListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateListTableViewController.swift; sourceTree = "<group>"; };
+		FCC678802304B05C003E1A60 /* StateDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDetailTableViewController.swift; sourceTree = "<group>"; };
+		FCC678822304B2DB003E1A60 /* StateDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				FCC6787E2304AE08003E1A60 /* StateListTableViewController.swift */,
+				FCC678802304B05C003E1A60 /* StateDetailTableViewController.swift */,
+				FCC678842304B5D9003E1A60 /* Custom Cell */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FCC678842304B5D9003E1A60 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FCC678822304B2DB003E1A60 /* StateDetailTableViewCell.swift */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +193,11 @@
 			files = (
 				FCC6787D23048794003E1A60 /* RepresentativeController.swift in Sources */,
 				FCC6787B230484CC003E1A60 /* Representative.swift in Sources */,
+				FCC678812304B05C003E1A60 /* StateDetailTableViewController.swift in Sources */,
 				B755BBC8219DE95C00A9E085 /* States.swift in Sources */,
 				FCC6787F2304AE08003E1A60 /* StateListTableViewController.swift in Sources */,
 				B755BBB6219DE93E00A9E085 /* AppDelegate.swift in Sources */,
+				FCC678832304B2DB003E1A60 /* StateDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
