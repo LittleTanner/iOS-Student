@@ -8,19 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		B755BBB6219DE93E00A9E085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755BBB5219DE93E00A9E085 /* AppDelegate.swift */; };
-		B755BBB8219DE93E00A9E085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755BBB7219DE93E00A9E085 /* ViewController.swift */; };
 		B755BBBB219DE93E00A9E085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B755BBB9219DE93E00A9E085 /* Main.storyboard */; };
 		B755BBBD219DE94000A9E085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B755BBBC219DE94000A9E085 /* Assets.xcassets */; };
 		B755BBC0219DE94000A9E085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B755BBBE219DE94000A9E085 /* LaunchScreen.storyboard */; };
 		B755BBC8219DE95C00A9E085 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755BBC7219DE95C00A9E085 /* States.swift */; };
 		FCC6787B230484CC003E1A60 /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6787A230484CC003E1A60 /* Representative.swift */; };
 		FCC6787D23048794003E1A60 /* RepresentativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6787C23048794003E1A60 /* RepresentativeController.swift */; };
+		FCC6787F2304AE08003E1A60 /* StateListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6787E2304AE08003E1A60 /* StateListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B755BBB2219DE93E00A9E085 /* Representative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Representative.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B755BBB5219DE93E00A9E085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B755BBB7219DE93E00A9E085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B755BBBA219DE93E00A9E085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B755BBBC219DE94000A9E085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B755BBBF219DE94000A9E085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +27,7 @@
 		B755BBC7219DE95C00A9E085 /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		FCC6787A230484CC003E1A60 /* Representative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representative.swift; sourceTree = "<group>"; };
 		FCC6787C23048794003E1A60 /* RepresentativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeController.swift; sourceTree = "<group>"; };
+		FCC6787E2304AE08003E1A60 /* StateListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 		FCC678792304846C003E1A60 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B755BBB7219DE93E00A9E085 /* ViewController.swift */,
+				FCC6787E2304AE08003E1A60 /* StateListTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -137,6 +137,7 @@
 				TargetAttributes = {
 					B755BBB1219DE93E00A9E085 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -179,7 +180,7 @@
 				FCC6787D23048794003E1A60 /* RepresentativeController.swift in Sources */,
 				FCC6787B230484CC003E1A60 /* Representative.swift in Sources */,
 				B755BBC8219DE95C00A9E085 /* States.swift in Sources */,
-				B755BBB8219DE93E00A9E085 /* ViewController.swift in Sources */,
+				FCC6787F2304AE08003E1A60 /* StateListTableViewController.swift in Sources */,
 				B755BBB6219DE93E00A9E085 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,7 +335,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevMtnStudent.Representative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -351,7 +352,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevMtnStudent.Representative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
