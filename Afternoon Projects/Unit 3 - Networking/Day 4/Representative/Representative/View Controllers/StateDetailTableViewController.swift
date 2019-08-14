@@ -26,6 +26,8 @@ class StateDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         guard let state = state else { return }
         RepresentativeController.searchRepresentatives(forState: state) { (representative) in
             

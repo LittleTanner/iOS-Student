@@ -23,9 +23,12 @@ class RepresentativeController {
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
         urlComponents?.queryItems = [stateQuery, outputQuery]
         
-        print(url)
         
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
+        guard let urlRequest = urlComponents?.url else { completion([]); return }
+        
+        print(urlRequest)
+        
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
             
             if let error = error {
                 print("There was an error in the dataTask: \(error) \(error.localizedDescription)")

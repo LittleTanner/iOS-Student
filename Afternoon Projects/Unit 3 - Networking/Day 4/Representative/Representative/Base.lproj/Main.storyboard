@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--States-->
         <scene sceneID="3MV-rA-K4Y">
             <objects>
                 <tableViewController id="OW0-mv-6NM" customClass="StateListTableViewController" customModule="Representative" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,16 +35,16 @@
                             <outlet property="delegate" destination="OW0-mv-6NM" id="Bqu-9k-iAq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="iuM-Bh-t5F"/>
+                    <navigationItem key="navigationItem" title="States" id="iuM-Bh-t5F"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzY-p0-tsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="365" y="143"/>
         </scene>
-        <!--State Detail Table View Controller-->
+        <!--Representatives-->
         <scene sceneID="rQE-IC-0XQ">
             <objects>
-                <tableViewController id="zoY-i6-szx" customClass="StateDetailTableViewController" customModule="Representative" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Representatives" id="zoY-i6-szx" customClass="StateDetailTableViewController" customModule="Representative" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mHQ-DN-fVP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
