@@ -14,6 +14,7 @@
 		B755BBC0219DE94000A9E085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B755BBBE219DE94000A9E085 /* LaunchScreen.storyboard */; };
 		B755BBC8219DE95C00A9E085 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755BBC7219DE95C00A9E085 /* States.swift */; };
 		FCC6787B230484CC003E1A60 /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6787A230484CC003E1A60 /* Representative.swift */; };
+		FCC6787D23048794003E1A60 /* RepresentativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6787C23048794003E1A60 /* RepresentativeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B755BBC1219DE94000A9E085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B755BBC7219DE95C00A9E085 /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = States.swift; sourceTree = "<group>"; };
 		FCC6787A230484CC003E1A60 /* Representative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representative.swift; sourceTree = "<group>"; };
+		FCC6787C23048794003E1A60 /* RepresentativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		FCC6787823048464003E1A60 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FCC6787C23048794003E1A60 /* RepresentativeController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC6787D23048794003E1A60 /* RepresentativeController.swift in Sources */,
 				FCC6787B230484CC003E1A60 /* Representative.swift in Sources */,
 				B755BBC8219DE95C00A9E085 /* States.swift in Sources */,
 				B755BBB8219DE93E00A9E085 /* ViewController.swift in Sources */,
